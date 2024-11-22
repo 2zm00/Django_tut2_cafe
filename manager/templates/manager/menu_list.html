@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>사나리아 메뉴</title>
+</head>
+<body>
+	<h1>menu 리스트입니다.</h1>
+	<a href="{% url 'manager:home' %}">카페 메인</a>
+	<a href="{% url 'manager:menu_add' %}">메뉴추가</a>
+
+	<ul>
+		{% for menu in menus_to_page %}
+		<li><a href="{% url 'manager:menu_detail' menu.id %}">{{menu.menu_name}}</a> : {{menu.menu_price}}원
+		</li>
+		{% endfor %}
+	</ul>
+	
+	
+	
+
+</body>
+</html>

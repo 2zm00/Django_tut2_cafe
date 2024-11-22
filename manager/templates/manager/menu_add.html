@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>메뉴 추가 페이지</title>
+</head>
+<body>
+	<h1>메뉴 추가 페이지</h1>
+	<a href="{% url 'manager:home' %}">메인</a>
+	<a href="{% url 'manager:menu_list' %}">메뉴리스트</a>
+	<form action="{% url 'manager:add_menu_data' %}" method="post">
+		{% csrf_token %}
+		<label for="">메뉴이름</label>
+		<input type="text" name="menu_name" >
+		<label for="">메뉴가격</label>
+		<input type="number" name = "menu_price" >
+		<input type="submit" value="메뉴 추가해서 DB에 넣기">
+	</form>
+</body>
+</html>

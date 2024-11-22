@@ -1,0 +1,12 @@
+<h1>Menu detail {{menu_to_page}}</h1>
+
+<ul>
+	{% for option in menu_to_page.option_set.all %}
+	<li>
+		{{menu.menu_name}}
+		{{option.option_name}} : {{option.option_price}}
+	</li>
+	{% endfor %}
+</ul>
+
+<a href="{% url 'manager:add_option' menu_to_page.id %}">옵션추가</a>
